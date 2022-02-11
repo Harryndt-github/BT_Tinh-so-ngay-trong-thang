@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Hiển thị số ngày của tháng</title>
+    </head>
+    <body>
+        <div>
+            <h2>Tính số ngày trong tháng</h2>
+            <input type="text" id="month" placeholder="Nhập tháng">
+            <button onclick="calculate()">Tính</button>
+            <p id="display"></p>
+        </div>
+        <script>
+            let month = document.getElementById('month');
+            let display = document.getElementById('display');
+            let sub = "Số ngày trong tháng ",
+                day = "";
+            function calculate() {
+                switch (month.value) {
+                    case "1":
+                    case "3":
+                    case "5":
+                    case "7":
+                    case "8":
+                    case "10":
+                    case "12":
+                        day = "là 31 ngày";
+                        display.innerHTML = sub + day;
+                        break;
+                    case "4":
+                    case "6":
+                    case "9":
+                    case "11":
+                        day = "là 30 ngày";
+                        display.innerHTML = sub + day;
+                        break;
+                    case "2":
+                        day = "là 28 hoặc 29 ngày";
+                        display.innerHTML = sub + day;
+                        break;
+                    default:
+                        display.innerHTML = "Nhập sai";
+                }
+            }
+        </script>
+    </body>
+</html>
